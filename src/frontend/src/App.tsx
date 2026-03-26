@@ -14,7 +14,6 @@ import {
   ExternalLink,
   FileText,
   FlaskConical,
-  GitMerge,
   Github,
   GraduationCap,
   Linkedin,
@@ -370,7 +369,6 @@ const NAV_LINKS = [
   { label: "Internship", id: "internship" },
   { label: "Certificates", id: "certificates" },
   { label: "Competitive", id: "competitive" },
-  { label: "Open Source", id: "opensource" },
   { label: "Blog", id: "blog" },
   { label: "Research", id: "research" },
   { label: "Education", id: "education" },
@@ -875,9 +873,9 @@ function HeroSection() {
       ))}
 
       <div className="relative z-10 max-w-6xl mx-auto w-full">
-        <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+        <div className="flex flex-col items-center">
           {/* Left: text */}
-          <div className="flex-1 text-center md:text-left">
+          <div className="text-center">
             <div className="animate-fade-up">
               <span
                 className="inline-block text-sm font-medium tracking-widest uppercase mb-6 px-4 py-2 rounded-full border"
@@ -912,7 +910,7 @@ function HeroSection() {
               Turning raw data into meaningful insights, one model at a time.
             </p>
 
-            <div className="animate-fade-up-delay-4 flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <div className="animate-fade-up-delay-4 flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
                 data-ocid="hero.view_projects.button"
@@ -953,74 +951,6 @@ function HeroSection() {
                   Download CV
                 </a>
               </Button>
-            </div>
-          </div>
-
-          {/* Right: portrait photo card */}
-          <div className="animate-fade-up flex-shrink-0 flex justify-center md:justify-end">
-            <div className="relative">
-              {/* Glow behind card */}
-              <div
-                className="absolute inset-0 rounded-3xl"
-                style={{
-                  background: "oklch(0.82 0.15 195 / 0.15)",
-                  filter: "blur(32px)",
-                  transform: "scale(0.92) translateY(8px)",
-                }}
-              />
-              {/* Card border accent */}
-              <div
-                className="absolute inset-0 rounded-3xl"
-                style={{
-                  background:
-                    "linear-gradient(160deg, oklch(0.82 0.15 195 / 0.5) 0%, oklch(0.68 0.1 200 / 0.1) 50%, oklch(0.82 0.15 195 / 0.3) 100%)",
-                  padding: "1.5px",
-                  borderRadius: "1.5rem",
-                }}
-              />
-              {/* Photo container — portrait ratio */}
-              <div
-                className="relative overflow-hidden"
-                style={{
-                  width: "260px",
-                  height: "360px",
-                  borderRadius: "1.4rem",
-                  border: "1.5px solid oklch(0.82 0.15 195 / 0.35)",
-                  boxShadow:
-                    "0 0 0 6px oklch(0.82 0.15 195 / 0.05), 0 24px 60px oklch(0.12 0.013 240 / 0.6)",
-                }}
-              >
-                <img
-                  src={PHOTO_SRC}
-                  alt="Yaswanth Jayamangala"
-                  className="w-full h-full object-cover object-center"
-                />
-                {/* Subtle gradient overlay at bottom */}
-                <div
-                  className="absolute bottom-0 left-0 right-0 h-16"
-                  style={{
-                    background:
-                      "linear-gradient(to top, oklch(0.12 0.013 240 / 0.4), transparent)",
-                  }}
-                />
-              </div>
-              {/* Status badge */}
-              <div
-                className="absolute -bottom-3 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-semibold"
-                style={{
-                  background: "oklch(0.16 0.015 240)",
-                  borderColor: "oklch(0.68 0.15 195 / 0.4)",
-                  color: "oklch(0.68 0.15 195)",
-                  boxShadow: "0 0 12px oklch(0.68 0.15 195 / 0.2)",
-                  whiteSpace: "nowrap",
-                }}
-              >
-                <span
-                  className="w-1.5 h-1.5 rounded-full"
-                  style={{ background: "oklch(0.68 0.15 195)" }}
-                />
-                Open to Internships
-              </div>
             </div>
           </div>
         </div>
@@ -1939,122 +1869,6 @@ function CompetitiveSection() {
   );
 }
 
-function OpenSourceSection() {
-  const contributions = [
-    {
-      title: "Heart Disease EDA — Kaggle Notebook",
-      type: "Dataset / Notebook",
-      impact: "45+ Upvotes",
-      desc: "Published a comprehensive EDA notebook on the Heart Disease dataset, covering data cleaning, feature correlation, and visualizations.",
-      typeColor: "oklch(0.80 0.18 55)",
-      typeBg: "oklch(0.80 0.18 55 / 0.12)",
-    },
-    {
-      title: "Python Data Cleaning Utility — GitHub",
-      type: "Open Source Script",
-      impact: "15+ Stars",
-      desc: "Authored a reusable Python utility for automated data cleaning including null handling, type coercion, and outlier detection.",
-      typeColor: "oklch(0.82 0.15 195)",
-      typeBg: "oklch(0.82 0.15 195 / 0.12)",
-    },
-    {
-      title: "Documentation Improvements — Data Viz Project",
-      type: "Docs / PR",
-      impact: "Merged PR",
-      desc: "Contributed clear usage examples and API documentation improvements to an open-source data visualization library on GitHub.",
-      typeColor: "oklch(0.70 0.18 280)",
-      typeBg: "oklch(0.70 0.18 280 / 0.12)",
-    },
-    {
-      title: "Active GitHub Profile",
-      type: "Commits & Collab",
-      impact: "Regular Activity",
-      desc: "Maintains consistent commit history across personal data science projects and collaborative repositories with clean code practices.",
-      typeColor: "oklch(0.72 0.18 145)",
-      typeBg: "oklch(0.72 0.18 145 / 0.12)",
-    },
-  ];
-  return (
-    <section
-      id="opensource"
-      className="py-24 px-6 relative"
-      style={{
-        background:
-          "linear-gradient(180deg, oklch(0.12 0.013 240) 0%, oklch(0.13 0.014 236 / 0.85) 100%)",
-      }}
-    >
-      <div className="max-w-6xl mx-auto">
-        <SectionHeading
-          title="Open Source Contributions"
-          subtitle="Community & Collaboration"
-        />
-        <div className="mt-12 grid sm:grid-cols-2 gap-6">
-          {contributions.map((c, i) => (
-            <div
-              key={c.title}
-              data-ocid={`opensource.item.${i + 1}`}
-              className="rounded-2xl border p-6 flex flex-col gap-3 transition-all duration-300 hover:-translate-y-1"
-              style={{
-                background: "oklch(0.15 0.014 240)",
-                borderColor: "oklch(0.94 0.01 220 / 0.08)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  c.typeColor.replace(")", " / 0.3)");
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  `0 8px 32px ${c.typeColor.replace(")", " / 0.07)")}`;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.borderColor =
-                  "oklch(0.94 0.01 220 / 0.08)";
-                (e.currentTarget as HTMLElement).style.boxShadow = "none";
-              }}
-            >
-              <div className="flex items-center gap-3">
-                <div
-                  className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: c.typeBg }}
-                >
-                  <GitMerge size={18} style={{ color: c.typeColor }} />
-                </div>
-                <h3
-                  className="font-bold text-sm leading-snug"
-                  style={{ color: "oklch(0.94 0.01 220)" }}
-                >
-                  {c.title}
-                </h3>
-              </div>
-              <div className="flex items-center gap-2 flex-wrap">
-                <span
-                  className="text-xs font-semibold px-2.5 py-1 rounded-lg"
-                  style={{ background: c.typeBg, color: c.typeColor }}
-                >
-                  {c.type}
-                </span>
-                <span
-                  className="text-xs font-semibold px-2.5 py-1 rounded-lg"
-                  style={{
-                    background: "oklch(0.82 0.15 195 / 0.1)",
-                    color: "oklch(0.82 0.15 195)",
-                  }}
-                >
-                  {c.impact}
-                </span>
-              </div>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "oklch(0.65 0.03 220)" }}
-              >
-                {c.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
-
 function BlogSection() {
   const articles = [
     {
@@ -2064,22 +1878,6 @@ function BlogSection() {
       platformBg: "oklch(0.94 0.01 220 / 0.1)",
       desc: "A beginner-friendly guide covering DataFrames, data cleaning, groupby operations, and real-world data wrangling techniques using Pandas.",
       views: "Featured Article",
-    },
-    {
-      title: "How Machine Learning Can Predict Heart Disease Risk",
-      platform: "Personal Blog",
-      platformColor: "oklch(0.82 0.15 195)",
-      platformBg: "oklch(0.82 0.15 195 / 0.1)",
-      desc: "A deep dive into the heart disease prediction project — covering data preprocessing, model selection, and key evaluation metrics for medical ML.",
-      views: "Project Write-up",
-    },
-    {
-      title: "Understanding Neural Networks: A Beginner's Guide",
-      platform: "LinkedIn Article",
-      platformColor: "oklch(0.70 0.18 250)",
-      platformBg: "oklch(0.70 0.18 250 / 0.1)",
-      desc: "Demystifying neural networks for fellow students — explaining perceptrons, activation functions, backpropagation, and practical use cases.",
-      views: "200+ Views",
     },
     {
       title: "Power BI vs Excel: Which Tool is Right for Data Analysis?",
@@ -2206,16 +2004,6 @@ function ResearchSection() {
         "Internal Publication — Lovely Professional University, Dept. of CSE",
       abstract:
         "Presents a scoring-based feed ranking algorithm using user interaction signals (likes, shares, comments) and content recency to generate personalized social media feeds.",
-    },
-    {
-      title:
-        "Improving Heart Disease Prediction Accuracy Using Ensemble Methods",
-      status: "Ongoing",
-      statusColor: "oklch(0.82 0.15 195)",
-      statusBg: "oklch(0.82 0.15 195 / 0.12)",
-      venue: "Research in Progress — LPU",
-      abstract:
-        "Ongoing research exploring stacking and boosting ensemble strategies to improve accuracy and reduce false negatives in cardiac risk prediction models trained on patient health datasets.",
     },
   ];
   return (
@@ -2400,6 +2188,12 @@ function EducationContactSection() {
                 >
                   Secondary School Certificate (SSC)
                 </p>
+                <p
+                  className="text-sm mt-1 font-semibold"
+                  style={{ color: "oklch(0.82 0.15 195)" }}
+                >
+                  CGPA: 10.0
+                </p>
               </div>
             </div>
 
@@ -2448,6 +2242,12 @@ function EducationContactSection() {
                   style={{ color: "oklch(0.55 0.02 220)" }}
                 >
                   Diploma in Computer Science Engineering
+                </p>
+                <p
+                  className="text-sm mt-1 font-semibold"
+                  style={{ color: "oklch(0.82 0.15 195)" }}
+                >
+                  CGPA: 9.1
                 </p>
               </div>
             </div>
@@ -2499,6 +2299,12 @@ function EducationContactSection() {
                   style={{ color: "oklch(0.65 0.02 220)" }}
                 >
                   Currently in 3rd Year
+                </p>
+                <p
+                  className="text-sm mt-1 font-semibold"
+                  style={{ color: "oklch(0.82 0.15 195)" }}
+                >
+                  CGPA: 7.5 (Present)
                 </p>
               </div>
             </div>
@@ -2764,8 +2570,6 @@ export default function App() {
           <CertificatesSection />
           <SectionDivider />
           <CompetitiveSection />
-          <SectionDivider />
-          <OpenSourceSection />
           <SectionDivider />
           <BlogSection />
           <SectionDivider />
