@@ -576,6 +576,68 @@ const PROJECTS: ProjectDetail[] = [
       "Successfully ranked posts by relevance score. Personalized feeds showed improved content relevance compared to chronological ordering.",
     github: "https://github.com/Yaswanthhh1432",
   },
+  {
+    id: 4,
+    title: "Financial Analysis Dashboard",
+    description:
+      "Built an interactive financial dashboard to analyze revenue trends, profit margins, and expense breakdowns using Python and Power BI.",
+    tags: ["Python", "Power BI", "Excel", "Pandas"],
+    status: "Completed",
+    statusColor: "emerald",
+    image: "/assets/generated/project-financial-dashboard.dim_600x340.jpg",
+    link: "#",
+    overview:
+      "An interactive dashboard that consolidates financial data to provide insights into revenue trends, profit margins, expense distribution, and KPI tracking for data-driven decision making.",
+    techStack: [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "Power BI",
+      "Excel",
+    ],
+    workflow: [
+      {
+        step: "Data Collection",
+        detail:
+          "Gathered financial datasets including revenue, expenses, and profit records across multiple periods",
+      },
+      {
+        step: "Data Cleaning",
+        detail:
+          "Removed inconsistencies, handled missing entries, and standardized date formats and currency values",
+      },
+      {
+        step: "Data Transformation",
+        detail:
+          "Created calculated columns for profit margins, growth rates, and expense ratios",
+      },
+      {
+        step: "Exploratory Data Analysis",
+        detail:
+          "Identified revenue trends, seasonal patterns, and top expense categories",
+      },
+      {
+        step: "Dashboard Design",
+        detail:
+          "Designed interactive Power BI dashboard with KPI cards, bar charts, line graphs, and pie charts",
+      },
+      {
+        step: "Insights Generation",
+        detail:
+          "Highlighted underperforming periods, high-cost segments, and revenue growth opportunities",
+      },
+      {
+        step: "Reporting",
+        detail:
+          "Exported visual reports and summary for stakeholder presentation",
+      },
+    ],
+    results:
+      "Delivered a comprehensive financial overview dashboard with real-time KPI tracking. Identified a 15% cost reduction opportunity through expense analysis.",
+    github: "https://github.com/Yaswanthhh1432",
+  },
 ];
 
 const STATUS_STYLES: Record<string, string> = {
